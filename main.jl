@@ -1,6 +1,6 @@
 using Distributed
 
-num_cores = parse(Int,ENV["SLURM_NTASKS_PER_NODE"])
+num_cores = parse(Int,ENV["SLURM_TASKS_PER_NODE"])
 addprocs(num_cores)
 
 # instantiate and precompile environment
