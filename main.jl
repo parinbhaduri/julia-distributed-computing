@@ -1,5 +1,8 @@
 using Distributed
 
+num_cores = parse(Int,ENV["SLURM_NTASKS_PER_NODE"])
+addprocs(num_cores)
+
 # instantiate and precompile environment
 @everywhere begin
   using Pkg; Pkg.activate(@__DIR__)
