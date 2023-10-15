@@ -1,0 +1,182 @@
+SLURM_JOB_ID = 48952
+SLURM_NTASKS = 40
+SLURM_NTASKS_PER_NODE = 
+SLURM_CPUS_PER_TASK = 
+SLURM_JOB_NUM_NODES = 1
+SLURM_JOB_NODELIST = c0001
+SLURM_TASKS_PER_NODE = 40
+SLURM_JOB_CPUS_PER_NODE = 80
+SLURM_CPUS_ON_NODE = 80
+  Activating environment at `~/julia-distributed-computing/Project.toml`
+  Installing known registries into `~/.julia`
+registry `General` already exist in `~/.julia/registries/General`.
+ERROR: LoadError: On worker 2:
+IOError: unlink("/home/fs01/pbb62/.julia/registries/General/O/OMEinsumContractionOrders"): no such file or directory (ENOENT)
+Stacktrace:
+  [1] uv_error
+    @ ./libuv.jl:97 [inlined]
+  [2] unlink
+    @ ./file.jl:934
+  [3] #rm#9
+    @ ./file.jl:272
+  [4] #rm#9 (repeats 2 times)
+    @ ./file.jl:282
+  [5] #checkfor_mv_cp_cptree#10
+    @ ./file.jl:310
+  [6] #mv#13
+    @ ./file.jl:396 [inlined]
+  [7] #82
+    @ /buildworker/worker/package_linux64/build/usr/share/julia/stdlib/v1.6/Pkg/src/Types.jl:1075
+  [8] #mktempdir#21
+    @ ./file.jl:729
+  [9] mktempdir (repeats 2 times)
+    @ ./file.jl:727 [inlined]
+ [10] clone_or_cp_registries
+    @ /buildworker/worker/package_linux64/build/usr/share/julia/stdlib/v1.6/Pkg/src/Types.jl:1027
+ [11] clone_or_cp_registries
+    @ /buildworker/worker/package_linux64/build/usr/share/julia/stdlib/v1.6/Pkg/src/Types.jl:1020 [inlined]
+ [12] #clone_default_registries#67
+    @ /buildworker/worker/package_linux64/build/usr/share/julia/stdlib/v1.6/Pkg/src/Types.jl:920
+ [13] clone_default_registries
+    @ /buildworker/worker/package_linux64/build/usr/share/julia/stdlib/v1.6/Pkg/src/Types.jl:908 [inlined]
+ [14] find_registered!
+    @ /buildworker/worker/package_linux64/build/usr/share/julia/stdlib/v1.6/Pkg/src/Types.jl:1291
+ [15] find_registered!
+    @ /buildworker/worker/package_linux64/build/usr/share/julia/stdlib/v1.6/Pkg/src/Types.jl:1252 [inlined]
+ [16] check_registered
+    @ /buildworker/worker/package_linux64/build/usr/share/julia/stdlib/v1.6/Pkg/src/Operations.jl:1154
+ [17] #instantiate#253
+    @ /buildworker/worker/package_linux64/build/usr/share/julia/stdlib/v1.6/Pkg/src/API.jl:1364
+ [18] instantiate
+    @ /buildworker/worker/package_linux64/build/usr/share/julia/stdlib/v1.6/Pkg/src/API.jl:1325 [inlined]
+ [19] #instantiate#252
+    @ /buildworker/worker/package_linux64/build/usr/share/julia/stdlib/v1.6/Pkg/src/API.jl:1321 [inlined]
+ [20] instantiate
+    @ /buildworker/worker/package_linux64/build/usr/share/julia/stdlib/v1.6/Pkg/src/API.jl:1321
+ [21] top-level scope
+    @ ~/julia-distributed-computing/main.jl:9
+ [22] eval
+    @ ./boot.jl:360
+ [23] #103
+    @ /buildworker/worker/package_linux64/build/usr/share/julia/stdlib/v1.6/Distributed/src/process_messages.jl:274
+ [24] run_work_thunk
+    @ /buildworker/worker/package_linux64/build/usr/share/julia/stdlib/v1.6/Distributed/src/process_messages.jl:63
+ [25] run_work_thunk
+    @ /buildworker/worker/package_linux64/build/usr/share/julia/stdlib/v1.6/Distributed/src/process_messages.jl:72
+ [26] #96
+    @ ./task.jl:411
+
+...and 40 more exceptions.
+
+Stacktrace:
+ [1] sync_end(c::Channel{Any})
+   @ Base ./task.jl:369
+ [2] macro expansion
+   @ ./task.jl:388 [inlined]
+ [3] remotecall_eval(m::Module, procs::Vector{Int64}, ex::Expr)
+   @ Distributed /buildworker/worker/package_linux64/build/usr/share/julia/stdlib/v1.6/Distributed/src/macros.jl:223
+ [4] top-level scope
+   @ /buildworker/worker/package_linux64/build/usr/share/julia/stdlib/v1.6/Distributed/src/macros.jl:207
+in expression starting at /home/fs01/pbb62/julia-distributed-computing/main.jl:7
+      From worker 6:	  Activating environment at `~/julia-distributed-computing/Project.toml`
+      From worker 6:	  Installing known registries into `~/.julia`
+      From worker 5:	  Activating environment at `~/julia-distributed-computing/Project.toml`
+      From worker 5:	  Installing known registries into `~/.julia`
+      From worker 7:	  Activating environment at `~/julia-distributed-computing/Project.toml`
+      From worker 7:	  Installing known registries into `~/.julia`
+      From worker 8:	  Activating environment at `~/julia-distributed-computing/Project.toml`
+      From worker 8:	  Installing known registries into `~/.julia`
+      From worker 4:	  Activating environment at `~/julia-distributed-computing/Project.toml`
+      From worker 4:	  Installing known registries into `~/.julia`
+      From worker 2:	  Activating environment at `~/julia-distributed-computing/Project.toml`
+      From worker 9:	  Activating environment at `~/julia-distributed-computing/Project.toml`
+      From worker 9:	  Installing known registries into `~/.julia`
+      From worker 29:	  Activating environment at `~/julia-distributed-computing/Project.toml`
+      From worker 29:	  Installing known registries into `~/.julia`
+      From worker 35:	  Activating environment at `~/julia-distributed-computing/Project.toml`
+      From worker 35:	  Installing known registries into `~/.julia`
+      From worker 27:	  Activating environment at `~/julia-distributed-computing/Project.toml`
+      From worker 27:	  Installing known registries into `~/.julia`
+      From worker 23:	  Activating environment at `~/julia-distributed-computing/Project.toml`
+      From worker 23:	  Installing known registries into `~/.julia`
+      From worker 13:	  Activating environment at `~/julia-distributed-computing/Project.toml`
+      From worker 13:	  Installing known registries into `~/.julia`
+      From worker 21:	  Activating environment at `~/julia-distributed-computing/Project.toml`
+      From worker 21:	  Installing known registries into `~/.julia`
+      From worker 17:	  Activating environment at `~/julia-distributed-computing/Project.toml`
+      From worker 17:	  Installing known registries into `~/.julia`
+      From worker 15:	  Activating environment at `~/julia-distributed-computing/Project.toml`
+      From worker 15:	  Installing known registries into `~/.julia`
+      From worker 19:	  Activating environment at `~/julia-distributed-computing/Project.toml`
+      From worker 19:	  Installing known registries into `~/.julia`
+      From worker 22:	  Activating environment at `~/julia-distributed-computing/Project.toml`
+      From worker 22:	  Installing known registries into `~/.julia`
+      From worker 20:	  Activating environment at `~/julia-distributed-computing/Project.toml`
+      From worker 20:	  Installing known registries into `~/.julia`
+      From worker 26:	  Activating environment at `~/julia-distributed-computing/Project.toml`
+      From worker 26:	  Installing known registries into `~/.julia`
+      From worker 32:	  Activating environment at `~/julia-distributed-computing/Project.toml`
+      From worker 32:	  Installing known registries into `~/.julia`
+      From worker 18:	  Activating environment at `~/julia-distributed-computing/Project.toml`
+      From worker 18:	  Installing known registries into `~/.julia`
+      From worker 30:	  Activating environment at `~/julia-distributed-computing/Project.toml`
+      From worker 30:	  Installing known registries into `~/.julia`
+      From worker 36:	  Activating environment at `~/julia-distributed-computing/Project.toml`
+      From worker 36:	  Installing known registries into `~/.julia`
+      From worker 12:	  Activating environment at `~/julia-distributed-computing/Project.toml`
+      From worker 12:	  Installing known registries into `~/.julia`
+      From worker 38:	  Activating environment at `~/julia-distributed-computing/Project.toml`
+      From worker 38:	  Installing known registries into `~/.julia`
+      From worker 33:	  Activating environment at `~/julia-distributed-computing/Project.toml`
+      From worker 33:	  Installing known registries into `~/.julia`
+      From worker 14:	  Activating environment at `~/julia-distributed-computing/Project.toml`
+      From worker 14:	  Installing known registries into `~/.julia`
+      From worker 40:	  Activating environment at `~/julia-distributed-computing/Project.toml`
+      From worker 40:	  Installing known registries into `~/.julia`
+      From worker 37:	  Activating environment at `~/julia-distributed-computing/Project.toml`
+      From worker 37:	  Installing known registries into `~/.julia`
+      From worker 41:	  Activating environment at `~/julia-distributed-computing/Project.toml`
+      From worker 41:	  Installing known registries into `~/.julia`
+      From worker 39:	  Activating environment at `~/julia-distributed-computing/Project.toml`
+      From worker 39:	  Installing known registries into `~/.julia`
+      From worker 31:	  Activating environment at `~/julia-distributed-computing/Project.toml`
+      From worker 31:	  Installing known registries into `~/.julia`
+      From worker 34:	  Activating environment at `~/julia-distributed-computing/Project.toml`
+      From worker 34:	  Installing known registries into `~/.julia`
+      From worker 10:	  Activating environment at `~/julia-distributed-computing/Project.toml`
+      From worker 10:	  Installing known registries into `~/.julia`
+      From worker 25:	  Activating environment at `~/julia-distributed-computing/Project.toml`
+      From worker 25:	  Installing known registries into `~/.julia`
+      From worker 28:	  Activating environment at `~/julia-distributed-computing/Project.toml`
+      From worker 28:	  Installing known registries into `~/.julia`
+      From worker 3:	  Activating environment at `~/julia-distributed-computing/Project.toml`
+      From worker 3:	  Installing known registries into `~/.julia`
+      From worker 16:	  Activating environment at `~/julia-distributed-computing/Project.toml`
+      From worker 11:	  Activating environment at `~/julia-distributed-computing/Project.toml`
+      From worker 24:	  Activating environment at `~/julia-distributed-computing/Project.toml`
+      From worker 24:	  Installing known registries into `~/.julia`
+      From worker 11:	  Installing known registries into `~/.julia`
+      From worker 16:	  Installing known registries into `~/.julia`
+      From worker 2:	  Installing known registries into `~/.julia`
+      From worker 28:	registry `General` already exist in `~/.julia/registries/General`.
+      From worker 7:	registry `General` already exist in `~/.julia/registries/General`.
+      From worker 20:	registry `General` already exist in `~/.julia/registries/General`.
+      From worker 3:	registry `General` already exist in `~/.julia/registries/General`.
+      From worker 36:	registry `General` already exist in `~/.julia/registries/General`.
+      From worker 21:	registry `General` already exist in `~/.julia/registries/General`.
+      From worker 6:	registry `General` already exist in `~/.julia/registries/General`.
+      From worker 27:	registry `General` already exist in `~/.julia/registries/General`.
+      From worker 24:	registry `General` already exist in `~/.julia/registries/General`.
+      From worker 19:	registry `General` already exist in `~/.julia/registries/General`.
+      From worker 10:	registry `General` already exist in `~/.julia/registries/General`.
+      From worker 8:	registry `General` already exist in `~/.julia/registries/General`.
+      From worker 23:	registry `General` already exist in `~/.julia/registries/General`.
+      From worker 5:	registry `General` already exist in `~/.julia/registries/General`.
+      From worker 31:	registry `General` already exist in `~/.julia/registries/General`.
+      From worker 32:	registry `General` already exist in `~/.julia/registries/General`.
+      From worker 33:	registry `General` already exist in `~/.julia/registries/General`.
+      From worker 40:	registry `General` already exist in `~/.julia/registries/General`.
+      From worker 15:	registry `General` already exist in `~/.julia/registries/General`.
+      From worker 38:	registry `General` already exist in `~/.julia/registries/General`.
+      From worker 18:	registry `General` already exist in `~/.julia/registries/General`.
+      From worker 22:	       Added registry `General` to `~/.julia/registries/General`
