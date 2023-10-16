@@ -2,6 +2,8 @@
 #SBATCH --job-name=parallel_test_julia
 #SBATCH --nodes=1
 #SBATCH --ntasks=40
+#SBATCH --output=results/output_text.txt
+#SBATCH --error=results/error_text.txt
 #SBATCH --exclusive
 
 # Print properties of job as submitted
