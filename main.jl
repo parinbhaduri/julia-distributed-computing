@@ -1,11 +1,11 @@
-using Distributed,Pkg
-Pkg.activate(@__DIR__)
+using Distributed
+
 num_cores = parse(Int,ENV["SLURM_TASKS_PER_NODE"])
-addprocs(num_cores, exeflags="--project=$(Base.active_project())")
+addprocs(num_cores)
 
 # instantiate and precompile environment
 @everywhere begin
-  using Pkg; 
+  using Pkg;Pkg.activate(@__DIR__); 
   Pkg.instantiate(); Pkg.precompile()
 end
 

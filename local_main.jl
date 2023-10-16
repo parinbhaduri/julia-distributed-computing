@@ -1,13 +1,12 @@
 #For use on local machine
-using Distributed, Pkg
+using Distributed
 
-Pkg.activate(@__DIR__)
 num_cores = parse(Int,"4")
-addprocs(num_cores, exeflags="--project=$(Base.active_project())")#, exeflags="--project=$(Base.active_project())")
+addprocs(num_cores)
 
 # instantiate and precompile environment
 @everywhere begin
-  using Pkg;
+  using Pkg;Pkg.activate(@__DIR__);
   Pkg.instantiate(); Pkg.precompile()
 end
 
