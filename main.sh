@@ -1,7 +1,7 @@
 #!/bin/bash
 #SBATCH --job-name=parallel_test_julia
 #SBATCH --nodes=1
-#SBATCH --ntasks=40
+#SBATCH --ntasks=4
 #SBATCH --output=results/output_text.txt
 #SBATCH --error=results/error_text.txt
 #SBATCH --exclusive
