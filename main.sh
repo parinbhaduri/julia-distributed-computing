@@ -19,8 +19,7 @@ echo "SLURM_TASKS_PER_NODE = $SLURM_TASKS_PER_NODE"
 echo "SLURM_JOB_CPUS_PER_NODE = $SLURM_JOB_CPUS_PER_NODE"
 echo "SLURM_CPUS_ON_NODE = $SLURM_CPUS_ON_NODE"
 
-# Load the Julia module
-module load julia/1.6.2
 
-# Run the Julia code
-julia main.jl
+
+# Run the Julia code (specify version)
+julia +1.7 main.jl
